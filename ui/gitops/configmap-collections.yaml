@@ -1,0 +1,11 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: collections
+data:
+  collections.json: |-
+    [
+      {"name":"none","display_name":"None"},
+      {"name":"demo","display_name":"Red Hat Docs"},
+      {"name":"pdf","display_name":"PDF"}
+    ]
