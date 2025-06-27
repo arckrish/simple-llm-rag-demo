@@ -1,5 +1,4 @@
 # simple-llm-rag-demo
-# simple-llm-rag-demo
 
 This project demonstrates a simple Retrieval-Augmented Generation (RAG) workflow using Large Language Models (LLMs). It provides example notebooks and configuration files to ingest documents, perform retrieval from a vector database, and generate responses using LLMs.
 
@@ -18,9 +17,13 @@ This project demonstrates a simple Retrieval-Augmented Generation (RAG) workflow
 - `vLLM/` – LLM-related resources
 - `docs/` – Sample documentation and reference PDFs
 
-## Requirements
-
-See [requirements.txt](requirements.txt) for Python dependencies.
 
 ## Getting Started
+1. Demo environment - https://catalog.demo.redhat.com/catalog?item=babylon-catalog-prod/sandboxes-gpte.ocp4-demo-rhods-nvidia-gpu-aws.prod&utm_source=webapp&utm_medium=share-link
+2. Deploy Vector DB
+3. Deploy LLM
+4. Run Ingest Client to upload docs to vector DB
+5. Run RAG Notebook 
+
+
 
