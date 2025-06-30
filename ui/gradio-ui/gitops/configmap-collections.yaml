@@ -6,6 +6,7 @@ data:
   collections.json: |-
     [
       {"name":"none","display_name":"None"},
-      {"name":"demo","display_name":"Red Hat Docs"},
-      {"name":"pdf","display_name":"PDF"}
+      {"name":"demo_collection","display_name":"Red Hat Docs"},
+      {"name":"pdf_collection","display_name":"PDF"}
+      {"name":"LangChainCollection","display_name":"LangChainCollection"}
     ]

@@ -106,7 +106,8 @@ spec:
             successThreshold: 1
             failureThreshold: 24
           terminationMessagePolicy: File
-          image: 'quay.io/rh-aiservices-bu/gradio-rag-milvus-vllm-openai:latest'
+          #image: 'quay.io/rh-aiservices-bu/gradio-rag-milvus-vllm-openai:latest'
+          image: 'quay.io/arckrish/gradio-rag-milvus:latest'
           volumeMounts:
             - name: collections
               mountPath: /opt/app-root/src/collections.json
