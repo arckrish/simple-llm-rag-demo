@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: simple-llm-rag-ui
+spec:
+  selector:
+    app: simple-llm-rag-ui
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8501

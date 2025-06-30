@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: simple-llm-rag-ui-env
+data:
+  MILVUS_HOST: "milvus-service"
+  MILVUS_PORT: "19530"
+  MILVUS_COLLECTION: "rag_docs"
+  LLM_ENDPOINT: "http://llm-service:8000/generate"

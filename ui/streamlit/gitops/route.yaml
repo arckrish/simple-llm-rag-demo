@@ -1,0 +1,12 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: simple-llm-rag-ui
+spec:
+  to:
+    kind: Service
+    name: simple-llm-rag-ui
+  port:
+    targetPort: http
+  tls:
+    termination: edge

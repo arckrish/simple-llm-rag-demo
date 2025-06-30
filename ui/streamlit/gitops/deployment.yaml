@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-llm-rag-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simple-llm-rag-ui
+  template:
+    metadata:
+      labels:
+        app: simple-llm-rag-ui
+    spec:
+      containers:
+        - name: ui
+          image: quay.io/arckrish/simple-llm-rag-ui:1.1
+          ports:
+            - containerPort: 8501
+          env:
+            - name: MILVUS_HOST
+              value: "vectordb-milvus.milvus.svc.cluster.local"
+            - name: MILVUS_PORT
+              value: "19530"
+            - name: MILVUS_COLLECTION
+              value: "pdf_collection"
+            - name: LLM_ENDPOINT
+              value: "http://vllm.vllm.svc.cluster.local:8000/v1"
+            - name: EMBEDDING_SERVER_URL
+              value: "http://vllm.vllm.svc.cluster.local:8000/v1"
+            - name: MILVUS_USERNAME
+              value: 'root'
+            - name: MILVUS_PASSWORD
+              value: 'Milvus'
+            - name: MODEL_NAME
+              value: 'mistralai/Mistral-7B-Instruct-v0.2'
+            - name: STREAMLIT_SERVER_ENABLECORS
+              value: "false"
+            - name: STREAMLIT_SERVER_ENABLEXSRFPROTECTION
+              value: "false"
+            - name: STREAMLIT_SERVER_HEADLESS
+              value: "true"
+            - name: STREAMLIT_SERVER_PORT
+              value: "8501"
+            - name: STREAMLIT_SERVER_ADDRESS
+              value: "0.0.0.0"
+            - name: TRANSFORMERS_CACHE
+              value: /tmp/hf-cache
+            - name: SENTENCE_TRANSFORMERS_HOME
+              value: /tmp/sentence-transformers
+            - name: HOME
+              value: /tmp
+          resources:
+            limits:
+              cpu: "1"
+              memory: "2Gi"
+            requests:
+              cpu: "250m"
+              memory: "512Mi"
