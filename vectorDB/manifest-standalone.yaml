@@ -22,8 +22,8 @@ metadata:
     heritage: Helm
 type: Opaque
 data:
-  accesskey: "bWluaW9hZG1pbg=="
-  secretkey: "bWluaW9hZG1pbg=="
+  accesskey: ""
+  secretkey: ""
 ---
 # Source: milvus/charts/minio/templates/configmap.yaml
 apiVersion: v1
